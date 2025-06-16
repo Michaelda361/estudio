@@ -1,0 +1,141 @@
+body, html {
+margin: 0;
+padding: 0;
+height: 100%;
+font-family: 'Segoe UI', sans-serif;
+overflow: hidden;
+background: #000;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+canvas#particles {
+position: fixed;
+top: 0; left: 0;
+width: 100%;
+height: 100%;
+z-index: 0;
+}
+
+.login-card {
+position: relative;
+z-index: 1;
+background: rgba(255,255,255,0.05);
+backdrop-filter: blur(20px);
+border-radius: 15px;
+padding: 2.5rem 2rem;
+width: 100%;
+max-width: 380px;
+box-sizing: border-box;
+color: #fff;
+text-align: center;
+box-shadow: 0 0 30px rgba(0, 255, 200, 0.3);
+animation: fadeInSlide 1s ease-out;
+}
+
+.login-card h2 {
+margin-bottom: 0.5rem;
+}
+
+.login-card p {
+font-weight: 300;
+margin-bottom: 1.5rem;
+font-size: 0.95rem;
+}
+
+.login-card a {
+color: #00ffd5;
+text-decoration: none;
+font-weight: bold;
+}
+
+.input-group {
+margin-bottom: 1.2rem;
+}
+
+.input-group input {
+width: 100%;
+padding: 12px 18px;
+border: none;
+border-radius: 30px;
+background: rgba(255,255,255,0.1);
+color: #fff;
+font-size: 1rem;
+outline: none;
+box-sizing: border-box;
+}
+
+.input-group input::placeholder {
+color: #ccc;
+transition: 0.3s;
+}
+
+.input-group input:focus::placeholder {
+opacity: 0.4;
+}
+
+button {
+width: 100%;
+padding: 12px;
+border: none;
+border-radius: 30px;
+background: linear-gradient(90deg, #00ffc8, #00ffd5);
+color: #000;
+font-weight: bold;
+font-size: 1rem;
+cursor: pointer;
+transition: transform 0.2s;
+}
+
+button:hover {
+transform: scale(1.05);
+box-shadow: 0 0 10px #00ffd5;
+}
+
+.error-msg {
+color: #ff4d4d;
+margin-top: 10px;
+display: none;
+font-size: 0.9rem;
+animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+0% { transform: translateX(0px); }
+25% { transform: translateX(-5px); }
+50% { transform: translateX(5px); }
+75% { transform: translateX(-5px); }
+100% { transform: translateX(0px); }
+}
+
+@keyframes fadeInSlide {
+0% {
+opacity: 0;
+transform: translateY(-20px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* Media query para pantallas pequeñas */
+@media screen and (max-width: 480px) {
+.login-card {
+margin: 1rem;
+padding: 2rem 1.2rem;
+}
+
+.login-card h2 {
+font-size: 1.4rem;
+}
+
+.login-card p {
+font-size: 0.9rem;
+}
+
+button {
+font-size: 0.95rem;
+}
+}
