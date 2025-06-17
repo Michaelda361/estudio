@@ -16,12 +16,15 @@ return;
     <head> 
         <meta charset="UTF-8"> <title>Administrar Empleados</title>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/vistas/admin/empleado.css"> 
+        <script>
+            const CONTEXT_PATH = "${pageContext.request.contextPath}";
+        </script>
     </head>
     <body>
         <div class="contenedor"> 
             <header> <h1>Administrar Empleados</h1> 
                 <button id="btnAgregar">+ Agregar Empleado</button> </header>
-    <table>
+    <table id="tablaEmpleados">
         <thead>
             <tr>
                 <th>ID</th>
@@ -32,7 +35,7 @@ return;
         </thead>
         <tbody>
             <c:forEach var="emp" items="${listaEmpleados}">
-                <tr>
+                <tr id="empleado-${emp.idUsuario}">
                     <td>${emp.idUsuario}</td>
                     <td>${emp.nombreUsuario}</td>
                     <td>${emp.rol}</td>
